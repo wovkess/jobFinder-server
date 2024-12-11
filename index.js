@@ -38,6 +38,13 @@ app.get('/jobs', async (req, res) => {
     }
 });
 
+app.get('/', async (req, res) => {
+    try{
+        res.json({message: 'hello world'});
+    } catch (err){
+        res.status(500).json({ error: err.message });
+    }
+})
 
 app.post('/jobs', async (req, res) => {
     try {
